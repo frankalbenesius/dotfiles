@@ -1,0 +1,16 @@
+# This is Git's per-user configuration file.
+[color]
+	ui = auto
+[user]
+	name = Frank Albenesius
+	email = frankalbenesius@gmail.com
+[core]
+	editor = vim
+[alias]
+	gbpurge = !"git branch --merged | grep -Ev '\\*|master|develop|staging' | xargs -n 1 git branch -d"
+	cb = checkout -b
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
